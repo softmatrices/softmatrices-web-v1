@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Background circle -->
+  <rect width="64" height="64" rx="14" fill="#6366F1"/>
+  <!-- S letterform -->
+  <path d="M18 22C18 19.8 19.8 18 22 18H30C32.2 18 34 19.8 34 22V24C34 26.2 32.2 28 30 28H22V32H30C32.2 32 34 33.8 34 36V38C34 40.2 32.2 42 30 42H22C19.8 42 18 40.2 18 38" 
+        stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- M letterform -->
+  <path d="M38 42V22L44 32L50 22V42" 
+        stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
