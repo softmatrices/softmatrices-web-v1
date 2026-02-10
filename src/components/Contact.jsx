@@ -21,7 +21,7 @@ const Contact = () => {
         return errs
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const errs = validate()
         if (Object.keys(errs).length > 0) {
@@ -29,11 +29,35 @@ const Contact = () => {
             return
         }
         setErrors({})
-        setIsSubmitted(true)
-        setTimeout(() => {
-            setIsSubmitted(false)
-            setFormData({ name: '', email: '', message: '' })
-        }, 4000)
+
+        // Web3Forms Integration via Serverless Function
+        const payload = {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message
+        }
+
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                body: JSON.stringify(payload),
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            })
+            const result = await res.json()
+
+            if (result.success) {
+                setIsSubmitted(true)
+                setFormData({ name: '', email: '', message: '' })
+                setTimeout(() => setIsSubmitted(false), 5000)
+            } else {
+                setErrors({ submit: result.message || 'Something went wrong. Please try again.' })
+            }
+        } catch (error) {
+            setErrors({ submit: 'Failed to send message. Please check your connection.' })
+        }
     }
 
     const handleChange = (e) => {
