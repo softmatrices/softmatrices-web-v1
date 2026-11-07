@@ -1,0 +1,217 @@
+.offerings-section .section-heading {
+  margin-bottom: 55px;
+}
+.offerings-list {
+  border-top: 1px solid var(--border);
+}
+.offering-row {
+  display: grid;
+  grid-template-columns: 42px 1.05fr 1.2fr 44px;
+  gap: 34px;
+  align-items: start;
+  padding: 35px 0 33px;
+  border-bottom: 1px solid var(--border);
+  scroll-margin-top: 105px;
+}
+.offering-number {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--subtle);
+  padding-top: 3px;
+}
+.offering-title > span {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--subtle);
+  margin-bottom: 10px;
+}
+.offering-title > h3 {
+  max-width: 310px;
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.04em;
+}
+.offering-description > p {
+  max-width: 440px;
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.85;
+}
+.offering-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 15px;
+}
+.offering-features > span {
+  font-size: 14px;
+  color: var(--subtle);
+  line-height: 1.7;
+}
+.offering-features > span:not(:last-child)::after {
+  content: ' /';
+  margin-left: 12px;
+  color: var(--subtle);
+}
+.offering-explore {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  transition:
+    background 180ms,
+    color 180ms;
+}
+.offering-explore:hover {
+  background: var(--text);
+  color: var(--background);
+}
+@media (max-width: 1100px) {
+  .offering-row {
+    gap: 24px;
+    grid-template-columns: 30px 1fr 1.1fr 40px;
+  }
+  .offering-title > h3 {
+    font-size: 25px;
+  }
+}
+@media (max-width: 767px) {
+  .offerings-section .section-heading {
+    margin-bottom: 35px;
+  }
+  .offering-row {
+    grid-template-columns: 24px 1fr 40px;
+    gap: 15px;
+    padding: 28px 0;
+  }
+  .offering-title > h3 {
+    font-size: 25px;
+    max-width: none;
+  }
+  .offering-title > span {
+    font-size: 14px;
+  }
+  .offering-description {
+    grid-column: 2 / 4;
+    grid-row: 2;
+  }
+  .offering-description > p {
+    font-size: 16px;
+    max-width: none;
+  }
+  .offering-explore {
+    grid-column: 3;
+    grid-row: 1;
+    width: 35px;
+    height: 35px;
+  }
+  .offering-explore > svg {
+    width: 20px;
+  }
+  .offering-features > span {
+    font-size: 14px;
+  }
+  .offering-features {
+    gap: 6px 9px;
+    margin-top: 13px;
+  }
+  .offering-features > span:not(:last-child)::after {
+    margin-left: 7px;
+  }
+}
+@media (max-width: 479px) {
+  .offering-title > h3 {
+    font-size: 23px;
+  }
+  .offering-row {
+    gap: 12px;
+  }
+}
+
+.workflow-heading {
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+@media (max-width: 600px) {
+  .workflow-heading > span:last-child {
+    display: none;
+  }
+  .use-case-tabs button {
+    font-size: 15px;
+  }
+  .use-case-tabs button > svg {
+    display: none;
+  }
+}
+
+/* Editorial reading sizes; labels and controls keep their own clear hierarchy. */
+.section-heading > p,
+.offering-description > p,
+.use-case-content > p,
+.about-copy > p,
+.contact-intro > p,
+.foundation-intro > p {
+  font-size: 18px;
+  line-height: 1.75;
+}
+.about-copy > .about-lead {
+  font-size: 24px;
+}
+.capability p,
+.principle p,
+.process-step > p,
+.workflow-steps p {
+  font-size: 16px;
+  line-height: 1.75;
+}
+.form-field input,
+.form-field select,
+.form-field textarea {
+  font-size: 16px;
+}
+.use-case-tabs {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.use-case-tabs button {
+  min-width: 0;
+  line-height: 1.5;
+}
+@media (max-width: 1100px) {
+  .use-case-tabs button {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .use-case-tabs button > span,
+  .use-case-tabs button > svg {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .use-case-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    border: 0;
+    gap: 8px;
+  }
+  .use-case-tabs button {
+    flex: 1 1 calc(50% - 8px);
+    border: 1px solid var(--border);
+    padding: 12px;
+    font-size: 16px;
+  }
+  .use-case-tabs button[aria-selected='true'] {
+    border-color: var(--accent);
+  }
+  .use-case-tabs button:last-child {
+    flex-grow: 2;
+  }
+  .split-heading > p {
+    max-width: none;
+  }
+}
